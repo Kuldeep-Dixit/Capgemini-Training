@@ -1,0 +1,40 @@
+<section class="bg-warning m-2 p-2">
+    <h2>Add Employee</h2>
+    <div class="alert alert-success">{{msg}}</div>
+
+    <form #frm="ngForm" (ngSubmit)="addEmp()">
+        <div>Emp Id</div>
+        <div><input type="number" class="form-control" name="eid" min="1" required #eid="ngModel" [(ngModel)]="emp.empId"/> </div>
+        
+        <div *ngIf="eid.invalid && eid.touched" class="text-danger">
+        <div *ngIf="eid.errors?.['required']"> Emp id is mandatory</div>
+                <div *ngIf="eid.errors?.['min']"> min id is 1</div>
+                </div>
+
+         <div>Emp Name</div>
+        <div><input type="text" class="form-control" name="ename" pattern="[a-zA-Z][a-zA-Z0-9 ]*" maxlength="25" required #ename="ngModel" [(ngModel)]="emp.empName" /> </div>
+
+        <div *ngIf="ename.invalid && ename.touched" class="text-danger">
+        <div *ngIf="ename.errors?.['required']"> Emp name is required.</div>
+         <div *ngIf="ename.errors?.['pattern']"> Emp name starts with a letter and can contains space.</div>
+</div>
+
+         <div>Emp sal</div>
+        <div><input type="number" class="form-control" name="esal" min="1000" max="1000000" required #esal="ngModel" [(ngModel)]="emp.empSal"/> </div>
+
+        <div *ngIf="esal.invalid && esal.touched" class="text-danger">
+        <div *ngIf="esal.errors?.['required']"> Emp sal is required.</div>
+<div *ngIf="esal.errors?.['min']"> Emp minimum sal is 1000.</div>
+<div *ngIf="esal.errors?.['max']"> Emp maximum salary is 1000000</div>
+
+</div>
+         <div>Joining Date</div>
+
+        <div><input type="date" class="form-control" name="edt" required #edt="ngModel" [(ngModel)]="emp.empDoj"/> </div>
+        <div *ngIf="edt.invalid && edt.touched">Employee Joining date is required</div>
+
+        <input type="submit" value="Add Emp" [disabled]="frm.invalid"/>
+
+    </form>
+
+</section>

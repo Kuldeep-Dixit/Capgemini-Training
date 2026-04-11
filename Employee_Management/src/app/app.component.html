@@ -1,0 +1,30 @@
+<header class="bg-info justify-content-center p-2 text-white text-center ">
+  {{ title }}
+</header>
+
+<nav class="bg-dark p-2 col-10 mx-auto">
+  <ul class="d-flex gap-3 list-unstyled justify-content-center m-0">
+
+    <li>
+      <a class="btn btn-danger text-white" routerLink="/viewall">
+        View Employees
+      </a>
+    </li>
+
+    <li>
+      <a class="btn btn-danger text-white" routerLink="/add">
+        Add Employee
+      </a>
+    </li>
+
+    <!-- <li>
+      <a class="btn btn-danger text-white" routerLink="/editbook">
+        Edit Book
+      </a>
+    </li>  -->
+  </ul>
+</nav>
+
+<main class="container mt-4 col-10">
+  <router-outlet></router-outlet> 
+</main>

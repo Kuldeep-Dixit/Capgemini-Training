@@ -1,0 +1,80 @@
+<section class="container mt-4">
+
+  <div class="card shadow-lg rounded">
+    
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      <h4 class="mb-0">Employees List</h4>
+      <span class="badge bg-light text-dark">
+        Total: {{ empService.emp.length }}
+      </span>
+    </div>
+
+    <div class="card-body p-0">
+      <table class="table table-hover table-striped mb-0 text-center align-middle">
+        
+        <thead class="table-dark">
+          <tr>
+            <th>SR NO.</th>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee Salary</th>
+            <th>Employee DOJ</th>
+            <th colspan="2">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let e of empService.emp let i = index  "  >
+            
+            <td class="fw-bold text-primary">{{ i + 1 }}</td>
+
+            <td class="fw-semibold">
+              {{ e.empId }}
+            </td>
+
+            <td class="text-info fw-bold">
+              {{ e.empName | titlecase }}
+            </td>
+
+            <td class="text-success fw-bold">
+              {{ e.empSal | currency : 'INR' }}
+            </td>
+
+            <td>
+              {{ e.empDoj | date:'dd-MMM-yyyy' }}
+            </td>
+
+            <!-- Edit -->
+            <!-- <td>
+              <button 
+                class="btn btn-sm btn-outline-warning px-3"
+                routerLink="/edit/{{e.empId}}">
+                Edit
+              </button>
+            </td> -->
+
+            <td>
+              <button 
+                class="btn btn-sm btn-outline-danger px-3"
+                (click)="empService.deleteEmp(e.empId)">
+                Delete
+              </button>
+            </td>
+
+          </tr>
+
+        
+          <tr *ngIf="empService.emp.length === 0">
+            <td colspan="6" class="text-muted py-4">
+              No books available
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+
+</section>

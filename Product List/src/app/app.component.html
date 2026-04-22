@@ -1,0 +1,12 @@
+<header class="bg-info p-2 text-center">
+  <h1>{{ title }}</h1>
+  <div class="fst-italic">{{ subtitle }}</div>
+</header>
+<nav class=" bg-secondary p-2 col-10 mx-auto">
+  <a class="btn btn-danger m-2 p-2 text-white" routerLink="/search">Search Form</a>
+  <a class="btn btn-danger m-2 p-2 text-white" routerLink="/products">Product Listing</a>
+</nav>
+
+<main class="container-fluid">
+  <router-outlet></router-outlet>
+</main>

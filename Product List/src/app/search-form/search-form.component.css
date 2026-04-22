@@ -1,0 +1,77 @@
+section {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+input.form-control {
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  transition: all 0.2s ease;
+}
+
+input.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+button.btn-primary {
+  padding: 8px 18px;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+button.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+table {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+thead th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+tbody tr {
+  transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.05);
+  transform: scale(1.002);
+}
+
+td, th {
+  vertical-align: middle !important;
+  padding: 12px !important;
+}
+
+td:nth-child(3) {
+  font-weight: 500;
+  color: #28a745;
+}
+
+.text-center h4 {
+  margin-top: 20px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}

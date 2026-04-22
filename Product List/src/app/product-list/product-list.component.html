@@ -1,0 +1,23 @@
+<section class="m-2 p-2">
+    <h2>Products</h2>
+    <table class="table table-bordered table-hover table-primary">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prod of service.products">
+                <td>{{prod.pid}}</td>
+                <td>{{prod.pname | titlecase}}</td>
+                <td>{{prod.price | currency:'INR'}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="service.deleteProduct(prod.pid)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

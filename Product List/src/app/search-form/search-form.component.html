@@ -1,0 +1,26 @@
+<section class="m-2 p-2">
+
+    <h2>Search</h2>
+    <input type="text" class="form-control" placeholder="Search Product Name" [(ngModel)]="searchText">
+    <button class="btn btn-primary mt-2" (click)="search()">Search</button>
+    <table class="table table-bordered table-hover table-primary">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prod of filteredProducts">
+                <td>{{prod.pid}}</td>
+                <td>{{prod.pname | titlecase}}</td>
+                <td>{{prod.price | currency:'INR'}}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <div class="text-center" *ngIf="filteredProducts.length == 0 ">
+                <h4 class="text-danger">No Products Found</h4>
+            </div>
+</section>
